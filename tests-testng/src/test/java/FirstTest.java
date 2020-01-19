@@ -1,5 +1,17 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class FirstTest {
-  public static void main(String[] args) {
-    System.out.printf(":dsf");
-  }
+    private static final Logger logger = LogManager.getLogger(FirstTest.class);
+    public WebDriverManager webDriverManager;
+    public static void main(String[] args) {
+
+        logger.info("INFO");
+        logger.debug("DEBUG");
+        logger.error("ERROR");
+        logger.fatal("FATAL");
+        logger.warn("WARN");
+    }
+
 }
