@@ -1,30 +1,14 @@
-<Configuration status="debug" strict="true"
-               name="XMLConfigTest" packages="org.apache.logging.log4j.test">
-    <Filter type="ThresholdFilter" level="trace" />
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
     <Appenders>
-        <Console name="STDOUT">
-            <Layout type="PatternLayout" pattern="%m %n" />
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %c{1}.%M()\t %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
         </Console>
-        <RollingFile name="rollingFile"
-                     fileName="/Users/alexandrkanishevskii/IdeaProjects/JavaQA/tests-testng/src/main/resources/log4j2.log"
-                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
-            <PatternLayout>
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
-            </PatternLayout>
-            <Policies>
-                <TimeBasedTriggeringPolicy interval = "1" />
-                <SizeBasedTriggeringPolicy
-                        size="250 MB" />
-            </Policies>
-        </RollingFile>
     </Appenders>
-
     <Loggers>
-        <Root level="INFO">
-            <AppenderRef ref="STDOUT" />
-            <AppenderRef ref="rollingFile" />
+        <Root level="info" additivity="false">
+            <AppenderRef ref="console" />
         </Root>
     </Loggers>
-
 </Configuration>
