@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO">
+<Configuration monitorInterval="30">
     <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout
-                    pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %c{1}.%M()\t %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%d{HH:mm:ss.SSS}] | %-5p | %-32.42t | %-32.42c{1} | %m%n}{FATAL=red blink, ERROR=red blink, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
         </Console>
+        <RollingFile name="RollingFile" filename="src/main/java/logs/log4j2.log"
+                     filepattern="${logPath}/%d{YYYYMMddHHmmss}-fargo.log">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingFile>
     </Appenders>
     <Loggers>
-        <Root level="info" additivity="false">
-            <AppenderRef ref="console" />
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile" />
         </Root>
     </Loggers>
 </Configuration>
+
