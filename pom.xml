@@ -12,6 +12,7 @@
         <module>tests-junit</module>
         <module>tests-testng</module>
         <module>model</module>
+        <module>Lesson 4</module>
     </modules>
 
     <!--log2j2-->
