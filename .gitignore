@@ -164,6 +164,9 @@ hs_err_pid*
 .AppleDouble
 .LSOverride
 
+#logs
+/logs
+
 # Icon must end with two \r
 Icon
 
