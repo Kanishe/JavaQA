@@ -35,7 +35,6 @@ public class MainTestFactory {
             if (driver != null) {
                 driver.quit();
                 driver = null;
-                log.info("tearDown");
             }
         }
     }
