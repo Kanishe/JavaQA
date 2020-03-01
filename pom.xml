@@ -9,9 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>tests-junit</module>
-        <module>tests-testng</module>
         <module>Lesson4</module>
+        <module>Lesson1</module>
     </modules>
 
     <!--log2j2-->
