@@ -11,7 +11,7 @@
     <modules>
         <module>Lesson4</module>
         <module>LessonOne</module>
-
+        <module>LessonThree</module>
     </modules>
 
     <!--log2j2-->
