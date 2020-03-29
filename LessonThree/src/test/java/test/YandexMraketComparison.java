@@ -28,10 +28,8 @@ public class YandexMraketComparison extends LauncherDriver {
         yandexMarket.openPageElectronics();
         yandexMarket.openPageMobilPhone();
         filterMobile.filterManufactory();
-        filterMobile.selectManufactory();
-
-
-
+        filterMobile.selectManufactoryApple();
+        filterMobile.sortByPrice();
 
     }
 }
