@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CheckUrl2 {
+public class CheckUrl3 {
     private WebDriver driver;
     private BaseTest baseTest;
 
